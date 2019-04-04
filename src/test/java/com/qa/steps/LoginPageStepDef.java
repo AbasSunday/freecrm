@@ -2,6 +2,7 @@ package com.qa.steps;
 
 import com.qa.base.Base;
 import com.qa.pages.LoginPage;
+import com.qa.pages.MainPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -14,6 +15,8 @@ public class LoginPageStepDef
     // ==================================================
 
     private Base base = Base.getInstance();
+
+    private MainPage mainPage = new MainPage();
     private LoginPage loginPage = new LoginPage();
 
     // ==================================================
@@ -38,5 +41,12 @@ public class LoginPageStepDef
     public void userShouldBeLoggedIn()
     {
 
+    }
+
+    @And("User clicks on myaccount")
+    public void userClicksOnMyaccount()
+    {
+        mainPage.getMyAccountDropdown().click();
+        base.clickWithJavaScript(mainPage.getLoginDropdownOption());
     }
 }

@@ -1,7 +1,8 @@
 Feature: PhpTravels
 
   Scenario Outline: Login
-    Given User visit url "https://www.phptravels.net/login"
+    Given User visit url "https://www.phptravels.net/"
+    And User clicks on myaccount
     And User login with valid "<Email>" and "<Password>"
     Then User should be logged in
 

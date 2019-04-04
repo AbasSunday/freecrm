@@ -1,5 +1,6 @@
 package com.qa.runner;
 
+import com.qa.base.Base;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
@@ -18,7 +19,7 @@ public class Runner extends AbstractTestNGCucumberTests
     @BeforeClass
     public static void setUp()
     {
-
+        Base.getInstance();
     }
 
     @AfterClass
