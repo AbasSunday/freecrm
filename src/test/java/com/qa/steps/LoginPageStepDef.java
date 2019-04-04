@@ -1,40 +1,42 @@
 package com.qa.steps;
 
 import com.qa.base.Base;
+import com.qa.pages.LoginPage;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 
-public class LoginPageStepDef{
+public class LoginPageStepDef
+{
+    // ==================================================
+    // VARIABLES
+    // ==================================================
 
-    Base base = Base.getInstance();
-    @Given("^I access the phptravel \"([^\"]*)\"$")
-    public void i_access_the_phptravel(String url) {
+    private Base base = Base.getInstance();
+    private LoginPage loginPage = new LoginPage();
+
+    // ==================================================
+    // STEPS DEFINITIONS
+    // ==================================================
+
+    @Given("User visit url {string}")
+    public void userVisitUrl(String url)
+    {
         base.get(url);
-        System.out.println("Login Steps");
     }
 
-    @Given("^I select a My Account button$")
-    public void i_select_a_My_Account_button(){
-        // Write code here that turns the phrase above into concrete actions
+    @And("User login with valid {string} and {string}")
+    public void userLoginWithValidAnd(String email, String password)
+    {
+        loginPage.getEmailInput().sendKeys(email);
+        loginPage.getPasswordInput().sendKeys(password);
+        loginPage.getLoginButton().click();
     }
 
-    @Given("^I click on login button$")
-    public void i_click_on_login_button() throws Throwable {
+    @Then("User should be logged in")
+    public void userShouldBeLoggedIn()
+    {
 
     }
-
-    @Given("^The user should select on login button$")
-    public void the_user_should_select_on_login_button() {
-        // Write code here that turns the phrase above into concrete actions
-    }
-
-    @Given("^login page should be displayed$")
-    public void login_page_should_be_displayed(){
-    }
-
-    @Then("^User should enter \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void user_should_enter_and(String arg1, String arg2){
-    }
-
 }

@@ -1,72 +1,71 @@
 package com.qa.base;
 
-import com.crm.utilities.TestUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
-public class Base implements WebDriver{
+public class Base implements WebDriver
+{
+    // ==================================================
+    // VARIABLES
+    // ==================================================
 
-    //private static String CHROME_PATH = "/Users/abas/Documents/freecrm/src/main/";  //TODO: Update my config path
     private static Base instance;
-    public  WebDriver driver;
-    public static Properties properties;
-    public static EventFiringWebDriver event_Driver;
-    public static WebDriverEventListener eventListener;
+    private WebDriver driver;
+    private Properties properties;
 
+    // ==================================================
+    // CLASS LOGIC
+    // ==================================================
 
+    private void initialize()
+    {
+        reduceChromeDriverLogging();
+        loadConfigFile();
 
-    public static Base getInstance(){
+        String chromePath = System.getProperty("user.dir") + "/resources/chromedriver";
+        System.setProperty("webdriver.chrome.driver", chromePath);
+        driver = new ChromeDriver();
 
-        if (instance == null){
-            instance = new Base();
-        }
-        return instance;
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
     }
 
-    public Base(){
-        initialize();
+    /**
+     * Reduces number of ChromeDriver log output to the console,
+     * makes console cleaner and easier to see important output.
+     * Use with caution, it might disable important logs in case of crash etc.
+     */
+    private void reduceChromeDriverLogging()
+    {
+        System.setProperty("webdriver.chrome.silentOutput", "true");
+        java.util.logging.Logger.getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
     }
 
-    public void initialize(){
-
-            //String browserName = properties.getProperty("browser");
-
-//            if (browserName.equals("chrome")) {
-//                String chromePath = System.getProperty("user.dir") + "/resources/chromedriver";
-//                System.setProperty("webdriver.chrome.driver", chromePath);
-//                driver = new ChromeDriver();
-//            }
-
-            String chromePath = System.getProperty("user.dir") + "/resources/chromedriver";
-            System.setProperty("webdriver.chrome.driver", chromePath);
-            driver = new ChromeDriver();
-
-//            event_Driver = new EventFiringWebDriver(driver);
-//            eventListener = new WebElementListener();
-//            event_Driver.register(eventListener);
-//            driver = event_Driver;
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-            driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-            //driver.get("https://classic.crmpro.com/index.html");
-            String url = properties.getProperty("url");
-            System.out.println("The page URL ="+ url);
-            driver.get (url);
+    private void loadConfigFile()
+    {
+        try
+        {
+            properties = new Properties();
+            FileInputStream fis = new FileInputStream("config.properties");
+            properties.load(fis);
         }
-
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+    }
 
     public void doubleClickWithJavascript(WebElement element)
     {
@@ -81,38 +80,64 @@ public class Base implements WebDriver{
         executor.executeScript("arguments[0].click();", element);
     }
 
-    public WebElement getElementIfClickAble(By by, int timeout){
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
-
-        return wait.until(ExpectedConditions.elementToBeClickable(by));
+    public WebElement getElementWhenClickable(WebElement element)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public WebElement getElementIfVisible(By by, int timeout){
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
+    // ==================================================
+    // GETTERS AND SETTERS
+    // ==================================================
 
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    public Properties getProperties()
+    {
+        return properties;
+    }
+    
+    public WebDriver getWebDriver()
+    {
+        return driver;
     }
 
-    public WebElement getElementIfPresent(By by, int timeout){
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
+    // ==================================================
+    // SINGLETON HOLDER
+    // ==================================================
 
-        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    public static Base getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new Base();
+        }
+        return instance;
     }
 
+    private Base()
+    {
+        initialize();
+    }
+
+    // ==================================================
+    // INTERFACE IMPLEMENTATION
+    // ==================================================
 
     @Override
-    public void get(String s) {
+    public void get(String s)
+    {
         driver.get(s);
     }
 
     @Override
-    public String getCurrentUrl() {
-        return null;
+    public String getCurrentUrl()
+    {
+        return driver.getCurrentUrl();
     }
 
     @Override
-    public String getTitle() {
-        return null;
+    public String getTitle()
+    {
+        return driver.getTitle();
     }
 
     @Override
