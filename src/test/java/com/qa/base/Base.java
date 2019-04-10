@@ -4,13 +4,13 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
+
 
 public class Base implements WebDriver
 {
@@ -168,17 +168,17 @@ public class Base implements WebDriver
 
     @Override
     public List<WebElement> findElements(By by) {
-        return null;
+        return driver.findElements(by);
     }
 
     @Override
     public WebElement findElement(By by) {
-        return null;
+        return driver.findElement(by);
     }
 
     @Override
     public String getPageSource() {
-        return null;
+        return driver.getPageSource();
     }
 
     @Override
@@ -193,26 +193,26 @@ public class Base implements WebDriver
 
     @Override
     public Set<String> getWindowHandles() {
-        return null;
+        return driver.getWindowHandles();
     }
 
     @Override
     public String getWindowHandle() {
-        return null;
+        return driver.getWindowHandle();
     }
 
     @Override
     public TargetLocator switchTo() {
-        return null;
+        return driver.switchTo();
     }
 
     @Override
     public Navigation navigate() {
-        return null;
+        return driver.navigate();
     }
 
     @Override
     public Options manage() {
-        return null;
+        return driver.manage();
     }
 }

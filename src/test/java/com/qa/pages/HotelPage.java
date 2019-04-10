@@ -1,26 +1,22 @@
 package com.qa.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainPage extends BasePage
-{
+public class HotelPage {
+
     // ==================================================
     // VARIABLES
     // ==================================================
 
-    @FindBy (xpath = "//*[@class='navbar navbar-default']")
+    @FindBy(xpath = "//*[@class='navbar navbar-default']")
     WebElement navBar;
 
     @FindBy(xpath = "//*[text()=' Login']")
     WebElement loginElement;
 
-    @FindBy(xpath = "//*[@id='li_myaccount']/a")
+    @FindBy(id = "li_myaccount")
     WebElement myAccountElement;
-
-    @FindBy()
-    WebElement titlePageText;
 
     // ==================================================
     // CONSTRUCTOR
@@ -31,17 +27,4 @@ public class MainPage extends BasePage
     // ==================================================
 
 
-    public WebElement getMyAccountDropdown()
-    {
-        return base.getElementWhenClickable(navBar).findElement(By.id(String.valueOf(myAccountElement)));
-    }
-
-    public WebElement getLoginDropdownOption()
-    {
-        return base.getElementWhenClickable(navBar).findElement(By.xpath(String.valueOf(loginElement)));
-    }
-
-    public String getPageTitle(){
-        return base.getTitle();
-    }
 }

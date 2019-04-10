@@ -15,7 +15,6 @@ public class LoginPageStepDef
     // ==================================================
 
     private Base base = Base.getInstance();
-
     private MainPage mainPage = new MainPage();
     private LoginPage loginPage = new LoginPage();
 
@@ -35,6 +34,7 @@ public class LoginPageStepDef
         loginPage.getEmailInput().sendKeys(email);
         loginPage.getPasswordInput().sendKeys(password);
         loginPage.getLoginButton().click();
+
     }
 
     @Then("User should be logged in")
