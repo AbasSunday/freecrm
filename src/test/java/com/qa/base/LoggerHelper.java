@@ -19,7 +19,8 @@ public class LoggerHelper {
         if (root) {
 
             LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
-            File file = new File("/Users/abas/Documents/freecrm/resource/log4j.properties");
+            File file = new File( ("user.dir") + "/resources/log4j.properties");
+
             context.setConfigLocation(file.toURI());
             root = true;
             return LoggerHelper.getLogger(cls);
@@ -27,13 +28,10 @@ public class LoggerHelper {
         return LoggerHelper.getLogger(cls);
     }
 
-    public static void main(String[] args) {
-        Logger log = LoggerHelper.getLogger(Logger.class);
-        log.info("Logger is configured");
-        log.info("Logger is configured");
-        log.info("Logger is configured");
-
-
-    }
-
+//    public static void main(String[] args) {
+//        Logger log = LoggerHelper.getLogger(Logger.class);
+//        log.info("Logger is configured");
+//        log.info("Logger is configured");
+//        log.info("Logger is configured");
+//    }
 }

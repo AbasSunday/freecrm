@@ -7,6 +7,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 @RunWith(Cucumber.class)
@@ -14,14 +16,16 @@ import org.testng.annotations.Test;
         features = {"features"},
         glue="com.qa.steps",
         plugin = { "pretty", "json:target/cucumber-reports/report.json"},
-        tags={"not @Ignore"})
+        tags={"not @Ignore"},
+        dryRun = true )
+
 public class Runner extends AbstractTestNGCucumberTests
 {
 
-//    @BeforeSuite
-//    public static void initialise(){
-//
-//    }
+    @BeforeSuite
+    public static void initialise(){
+
+    }
 
     @BeforeClass
     public static void setUp()
@@ -29,24 +33,24 @@ public class Runner extends AbstractTestNGCucumberTests
         Base.getInstance();
     }
 
-//    @BeforeMethod
-//    public static void launchBrowser(){
-//        System.out.println("Browser Launch");
-//    }
+    @BeforeMethod
+    public static void launchBrowser(){
+        System.out.println("Browser Launch");
+    }
     @Test()
     public void loginPageTest(){
         System.out.println("Login tested");
     }
-//
-//    @Test
-//    public void accountPageTest(){
-//        System.out.println("Account Page tested");
-//    }
-//
-//    @Test
-//    public void addressPageTest(){
-//        System.out.println("address Page tested");
-//    }
+
+    @Test
+    public void accountPageTest(){
+        System.out.println("Account Page tested");
+    }
+
+    @Test
+    public void addressPageTest(){
+        System.out.println("address Page tested");
+    }
 
     @AfterClass
     public static void tearDown()
@@ -55,5 +59,3 @@ public class Runner extends AbstractTestNGCucumberTests
 
     }
 }
-
-
