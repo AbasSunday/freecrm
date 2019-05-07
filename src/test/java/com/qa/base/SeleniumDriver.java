@@ -1,5 +1,6 @@
 package com.qa.base;
 
+import com.qa.utill.enums.ElementState;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,13 +14,14 @@ import java.util.Set;
 import java.util.logging.Level;
 
 
-public class Base implements WebDriver
+public class SeleniumDriver implements WebDriver
 {
+
     // ==================================================
     // VARIABLES
     // ==================================================
 
-    private static Base instance;
+    private static SeleniumDriver instance;
     private WebDriver driver;
     private Properties properties;
 
@@ -101,6 +103,7 @@ public class Base implements WebDriver
         }
     }
 
+
     public void sleep(long milliseconds)
     {
         try
@@ -121,26 +124,52 @@ public class Base implements WebDriver
     {
         return properties;
     }
-    
+
+
     public WebDriver getWebDriver()
     {
         return driver;
     }
 
+    /**
+     * This method is used to locate element on the web page that is in a specified state
+     * and also wait till the expected condition is met
+     */
+
+    public WebElement getElement(By by, ElementState elementState, int timeOut){
+        switch(elementState){
+            case CLICKABLE:
+                return driverWait(timeOut).until(ExpectedConditions.elementToBeClickable(by));
+            case VISIBLE:
+                return driverWait(timeOut).until(ExpectedConditions.visibilityOfElementLocated(by));
+            case PRESENT:
+                return driverWait(timeOut).until(ExpectedConditions.presenceOfElementLocated(by));
+
+        }
+        return null;
+    }
+
+
+    public WebDriverWait driverWait(int timeOut){
+
+        return new WebDriverWait(driver,timeOut);
+    }
+
+
     // ==================================================
     // SINGLETON HOLDER
     // ==================================================
 
-    public static Base getInstance()
+    public static SeleniumDriver getInstance()
     {
         if (instance == null)
         {
-            instance = new Base();
+            instance = new SeleniumDriver();
         }
         return instance;
     }
 
-    private Base()
+    private SeleniumDriver()
     {
         initialize();
     }
