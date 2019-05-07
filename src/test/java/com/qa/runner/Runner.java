@@ -1,6 +1,6 @@
 package com.qa.runner;
 
-import com.qa.base.Base;
+import com.qa.base.SeleniumDriver;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
@@ -30,7 +30,7 @@ public class Runner extends AbstractTestNGCucumberTests
     @BeforeClass
     public static void setUp()
     {
-        Base.getInstance();
+        SeleniumDriver.getInstance();
     }
 
     @BeforeMethod
@@ -55,7 +55,7 @@ public class Runner extends AbstractTestNGCucumberTests
     @AfterClass
     public static void tearDown()
     {
-        Base.getInstance().close();
+        SeleniumDriver.getInstance().close();
 
     }
 }

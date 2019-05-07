@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82da3a6f-9c72-498d-8095-8e2c973cf266" name="Default Changelist" comment="Fixed framework + implemented sample scenario + cleanup.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/ElementState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/BasePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/CarsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/FlightPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/HotelPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/TourPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/steps/LoginPageStepDef.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,124 +36,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/base/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="93" column="21" selection-start-line="88" selection-start-column="5" selection-end-line="93" selection-end-column="21" />
+            <state relative-caret-position="60">
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3548#3549#0" expanded="true" />
+                <element signature="e#3581#3582#0" expanded="true" />
+                <element signature="e#3628#3629#0" expanded="true" />
+                <element signature="e#3657#3658#0" expanded="true" />
+                <element signature="e#4927#4928#0" expanded="true" />
+                <element signature="e#5156#5157#0" expanded="true" />
+                <element signature="e#5256#5257#0" expanded="true" />
+                <element signature="e#5346#5347#0" expanded="true" />
+                <element signature="e#5457#5458#0" expanded="true" />
+                <element signature="e#5560#5561#0" expanded="true" />
+                <element signature="e#5656#5657#0" expanded="true" />
+                <element signature="e#5858#5859#0" expanded="true" />
+                <element signature="e#5958#5959#0" expanded="true" />
+                <element signature="e#6051#6052#0" expanded="true" />
+                <element signature="e#6141#6142#0" expanded="true" />
+                <element signature="e#6224#6225#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="705">
+              <caret line="47" column="43" lean-forward="true" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
-                <element signature="e#1042#1043#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
+                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/ElementState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="21" column="79" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="79" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/CucumberFeatureWrapperImplementaion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/PropertiesFileReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/Base.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3537#3538#0" expanded="true" />
-                <element signature="e#3570#3571#0" expanded="true" />
-                <element signature="e#3617#3618#0" expanded="true" />
-                <element signature="e#3646#3647#0" expanded="true" />
-                <element signature="e#3973#3974#0" expanded="true" />
-                <element signature="e#4001#4002#0" expanded="true" />
-                <element signature="e#4201#4202#0" expanded="true" />
-                <element signature="e#4230#4231#0" expanded="true" />
-                <element signature="e#4285#4286#0" expanded="true" />
-                <element signature="e#4330#4331#0" expanded="true" />
-                <element signature="e#4380#4381#0" expanded="true" />
-                <element signature="e#4420#4421#0" expanded="true" />
-                <element signature="e#4485#4486#0" expanded="true" />
-                <element signature="e#4531#4532#0" expanded="true" />
-                <element signature="e#4589#4590#0" expanded="true" />
-                <element signature="e#4634#4635#0" expanded="true" />
-                <element signature="e#4685#4686#0" expanded="true" />
-                <element signature="e#4730#4731#0" expanded="true" />
-                <element signature="e#4884#4885#0" expanded="true" />
-                <element signature="e#4932#4933#0" expanded="true" />
-                <element signature="e#4985#4986#0" expanded="true" />
-                <element signature="e#5032#5033#0" expanded="true" />
-                <element signature="e#5085#5086#0" expanded="true" />
-                <element signature="e#5125#5126#0" expanded="true" />
-                <element signature="e#5175#5176#0" expanded="true" />
-                <element signature="e#5215#5216#0" expanded="true" />
-                <element signature="e#5260#5261#0" expanded="true" />
-                <element signature="e#5298#5299#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -152,6 +123,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -160,6 +132,7 @@
     <findStrings>
       <find>provide</find>
       <find>cucumber</find>
+      <find>find</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,15 +172,26 @@
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pages/CarsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/helper/SeleniumHelperClass.java" />
         <option value="$PROJECT_DIR$/resource/log4j" />
-        <option value="$PROJECT_DIR$/src/test/java/com/qa/steps/LoginPageStepDef.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java" />
         <option value="$PROJECT_DIR$/resource/log4j.properties" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
         <option value="$PROJECT_DIR$/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/PropertiesFileReader.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElements.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorTypes.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorType.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/ElementState.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/steps/LoginPageStepDef.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/steps/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java" />
       </list>
     </option>
   </component>
@@ -235,10 +219,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1366" />
-    <option name="y" value="236" />
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -249,22 +231,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
@@ -304,14 +277,65 @@
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="pom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="pom" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="pom" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="utill" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="utill" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,10 +344,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554411486403" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -359,7 +383,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qa.pages.*" />
+          <option name="PATTERN" value="com.qa.pom.pages.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -495,12 +519,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Runner - 2019.04.09 at 13h 26m 35s.xml">
-      <configuration name="Runner" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Runner - 2019.04.09 at 14h 00m 51s.xml">
-      <configuration name="Runner" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Runner - 2019.04.09 at 14h 01m 01s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
@@ -525,6 +543,12 @@
     <history-entry file="Runner - 2019.04.23 at 21h 20m 31s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="Runner - 2019.04.24 at 17h 19m 10s.xml">
+      <configuration name="Runner" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Runner - 2019.05.06 at 15h 50m 17s.xml">
+      <configuration name="Runner" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="9046000" />
@@ -539,10 +563,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1366" y="236" width="1366" height="768" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16012084" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13919415" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -551,13 +575,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.498779" visible="true" weight="0.3782235" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6833811" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498779" weight="0.26938775" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.68265307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32808024" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.44126076" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.501221" side_tool="true" weight="0.37959182" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.497558" weight="0.030612245" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50061053" side_tool="true" weight="0.68265307" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32857144" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.42550144" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -616,70 +640,7 @@
     <MESSAGE value="Fixed framework + implemented sample scenario + cleanup." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed framework + implemented sample scenario + cleanup." />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features/MyAccountPage.feature" />
-    <entry file="file://$PROJECT_DIR$/features/SignUpPage.feature" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.jar!/org/openqa/selenium/support/events/WebDriverEventListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar!/org/openqa/selenium/interactions/Action.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/FlightPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/BasePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-testng/3.0.2/cucumber-testng-3.0.2.jar!/cucumber/api/testng/AbstractTestNGCucumberTests.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -697,26 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/TourPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/HotelPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/lang/StringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -728,29 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="1532" column="23" lean-forward="true" selection-start-line="1532" selection-start-column="23" selection-end-line="1532" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/CarsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,35 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/helper/SeleniumHelperClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/steps/LoginPageStepDef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-core/3.0.2/cucumber-core-3.0.2.jar!/cucumber/runtime/Utils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -968,10 +857,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="93" column="21" selection-start-line="88" selection-start-column="5" selection-end-line="93" selection-end-column="21" />
+        <state relative-caret-position="828">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/helper/SeleniumHelperClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="79" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -987,9 +944,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/TourPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/FlightPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/CarsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/HotelPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/PropertiesFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="330">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -997,82 +995,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="301">
+          <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#3548#3549#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
+            <element signature="e#3628#3629#0" expanded="true" />
+            <element signature="e#3657#3658#0" expanded="true" />
+            <element signature="e#4927#4928#0" expanded="true" />
+            <element signature="e#5156#5157#0" expanded="true" />
+            <element signature="e#5256#5257#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5457#5458#0" expanded="true" />
+            <element signature="e#5560#5561#0" expanded="true" />
+            <element signature="e#5656#5657#0" expanded="true" />
+            <element signature="e#5858#5859#0" expanded="true" />
+            <element signature="e#5958#5959#0" expanded="true" />
+            <element signature="e#6051#6052#0" expanded="true" />
+            <element signature="e#6141#6142#0" expanded="true" />
+            <element signature="e#6224#6225#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/steps/LoginPageStepDef.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="21" column="79" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="79" />
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/Base.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/base/BasePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
+        <state relative-caret-position="60">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3537#3538#0" expanded="true" />
-            <element signature="e#3570#3571#0" expanded="true" />
-            <element signature="e#3617#3618#0" expanded="true" />
-            <element signature="e#3646#3647#0" expanded="true" />
-            <element signature="e#3973#3974#0" expanded="true" />
-            <element signature="e#4001#4002#0" expanded="true" />
-            <element signature="e#4201#4202#0" expanded="true" />
-            <element signature="e#4230#4231#0" expanded="true" />
-            <element signature="e#4285#4286#0" expanded="true" />
-            <element signature="e#4330#4331#0" expanded="true" />
-            <element signature="e#4380#4381#0" expanded="true" />
-            <element signature="e#4420#4421#0" expanded="true" />
-            <element signature="e#4485#4486#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
-            <element signature="e#4589#4590#0" expanded="true" />
-            <element signature="e#4634#4635#0" expanded="true" />
-            <element signature="e#4685#4686#0" expanded="true" />
-            <element signature="e#4730#4731#0" expanded="true" />
-            <element signature="e#4884#4885#0" expanded="true" />
-            <element signature="e#4932#4933#0" expanded="true" />
-            <element signature="e#4985#4986#0" expanded="true" />
-            <element signature="e#5032#5033#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
-            <element signature="e#5125#5126#0" expanded="true" />
-            <element signature="e#5175#5176#0" expanded="true" />
-            <element signature="e#5215#5216#0" expanded="true" />
-            <element signature="e#5260#5261#0" expanded="true" />
-            <element signature="e#5298#5299#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/ElementState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="43" lean-forward="true" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1133,7 +1139,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
