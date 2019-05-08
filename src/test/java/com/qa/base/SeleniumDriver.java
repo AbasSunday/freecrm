@@ -67,24 +67,6 @@ public class SeleniumDriver implements WebDriver
         }
     }
 
-    public void doubleClickWithJavascript(WebElement element)
-    {
-        String jsCode = "var evObj = new MouseEvent('dblclick', {bubbles: true, cancelable: true, view: window});";
-        jsCode += " arguments[0].dispatchEvent(evObj);";
-        ((JavascriptExecutor)driver).executeScript(jsCode, element);
-    }
-
-    public void clickWithJavaScript(WebElement element)
-    {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
-    }
-
-    public WebElement getElementWhenClickable(WebElement element)
-    {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
 
     /**
      * Draws red border around element, useful for debuging.
@@ -102,7 +84,6 @@ public class SeleniumDriver implements WebDriver
 
         }
     }
-
 
     public void sleep(long milliseconds)
     {
@@ -149,12 +130,10 @@ public class SeleniumDriver implements WebDriver
         return null;
     }
 
-
     public WebDriverWait driverWait(int timeOut){
 
         return new WebDriverWait(driver,timeOut);
     }
-
 
     // ==================================================
     // SINGLETON HOLDER
