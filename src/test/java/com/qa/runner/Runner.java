@@ -18,40 +18,4 @@ import org.junit.runner.RunWith;
 public class Runner extends AbstractTestNGCucumberTests
 {
 
-//    @BeforeSuite
-//    public static void initialise(){
-//
-//    }
-//
-//    @BeforeClass
-//    public static void setUp()
-//    {
-//        SeleniumDriver.getInstance();
-//    }
-//
-//    @BeforeMethod
-//    public static void launchBrowser(){
-//        System.out.println("Browser Launch");
-//    }
-//    @Test()
-//    public void loginPageTest(){
-//        System.out.println("Login tested");
-//    }
-//
-//    @Test
-//    public void accountPageTest(){
-//        System.out.println("Account Page tested");
-//    }
-//
-//    @Test
-//    public void addressPageTest(){
-//        System.out.println("address Page tested");
-//    }
-//
-//    @AfterClass
-//    public static void tearDown()
-//    {
-//        SeleniumDriver.getInstance().close();
-//
-//    }
 }
