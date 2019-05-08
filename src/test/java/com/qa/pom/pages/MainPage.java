@@ -8,8 +8,7 @@ public class MainPage extends BasePage {
 
     private BaseElement getQuoteButton = new BaseElement(LocatorType.XPATH, "//*[text()='Get A Quote']", 10);
 
-
-    public BaseElement getGetQuoteButton(){
+    public BaseElement getQuoteButton(){
         return getQuoteButton.get();
     }
 
