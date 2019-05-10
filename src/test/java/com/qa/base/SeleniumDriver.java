@@ -113,6 +113,16 @@ public class SeleniumDriver implements WebDriver
     }
 
     /**
+     * This method is used to switch and alert pop-up screen
+     * */
+
+    public void switchToAlert() {
+        Alert alert = driver.switchTo().alert();
+        System.out.println(alert.getText());
+        alert.accept();
+    }
+
+    /**
      * This method is used to locate element on the web page that is in a specified state
      * and also wait till the expected condition is met
      */
@@ -125,7 +135,6 @@ public class SeleniumDriver implements WebDriver
                 return driverWait(timeOut).until(ExpectedConditions.visibilityOfElementLocated(by));
             case PRESENT:
                 return driverWait(timeOut).until(ExpectedConditions.presenceOfElementLocated(by));
-
         }
         return null;
     }
