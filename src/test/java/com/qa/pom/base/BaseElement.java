@@ -5,12 +5,15 @@ import com.qa.utill.enums.ElementState;
 import com.qa.utill.enums.LocatorType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BaseElement {
+import java.util.List;
+
+public class BaseElement extends By {
 
     private WebElement webElement;
     private LocatorType locatorType;
@@ -90,6 +93,17 @@ public class BaseElement {
         webElement.submit();
     }
 
+    public String sendKeys(String petName){
+
+        webElement.sendKeys();
+
+        return petName;
+    }
+
+    @Override
+    public List<WebElement> findElements(SearchContext searchContext) {
+        return null;
+    }
 }
 
 
