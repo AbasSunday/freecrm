@@ -157,7 +157,7 @@ public class SeleniumDriver implements WebDriver
         return instance;
     }
 
-    private SeleniumDriver()
+    public SeleniumDriver()
     {
         initialize();
     }
