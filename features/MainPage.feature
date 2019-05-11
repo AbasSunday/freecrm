@@ -4,9 +4,9 @@ Feature: Pet Insurance
 
     Given User visit pet insurance url
     And  User clicks on getAQuote button
-    Then User enter <petName> on the Pet name field
+    Then User enter "<NameofPet>" on the Pet name field
 
 
     Examples:
-      | petName|
+      | NameofPet|
       | Monday |

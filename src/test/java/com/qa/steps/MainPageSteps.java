@@ -15,6 +15,8 @@ public class MainPageSteps extends BaseSteps {
     private DetailsPage detailsPage = new DetailsPage();
     private PropertiesFileReader fileReader = new PropertiesFileReader();
 
+
+
     public MainPageSteps() throws FileNotFoundException {
     }
 
@@ -29,11 +31,13 @@ public class MainPageSteps extends BaseSteps {
         mainPage.getQuoteButton().click();
     }
 
-    @Then("User enter Monday on the Pet name field")
-    public void user_enter_Monday_on_the_Pet_name_field(String Monday) {
+    @Then("User enter {string} on the Pet name field")
+    public void user_enter_on_the_Pet_name_field(String petName) {
         //detailsPage.getPetName().click();
-        detailsPage.getPetName().sendKeys(Monday);
-
-
+        detailsPage.getPetName().sendKeys("NameofPet");
     }
+
+
+
+
 }
