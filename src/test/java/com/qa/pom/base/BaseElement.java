@@ -15,7 +15,7 @@ import java.util.List;
 
 public class BaseElement extends By {
 
-    private WebElement webElement;
+    protected WebElement webElement;
     private LocatorType locatorType;
     private String locator;
     private int timeOut;
@@ -26,6 +26,11 @@ public class BaseElement extends By {
         this.locatorType = locatorType;
         this.locator = locator;
         this.timeOut = timeOut;
+    }
+
+    public BaseElement(String id)
+    {
+        new BaseElement(LocatorType.ID, id, 10);
     }
 
     public String getLocatorInfo(){
@@ -57,9 +62,15 @@ public class BaseElement extends By {
 
     public void clickWithJavaScript()
     {
-        JavascriptExecutor executor = (JavascriptExecutor) driver.getWebDriver();
-        executor.executeScript("arguments[0].click();", webElement);
+        clickWithJavaScript(webElement);
     }
+
+    public void clickWithJavaScript(WebElement element)
+    {
+        JavascriptExecutor executor = (JavascriptExecutor) driver.getWebDriver();
+        executor.executeScript("arguments[0].click();", element);
+    }
+
     public void doubleClickWithJavascript(WebElement element)
     {
         String jsCode = "var evObj = new MouseEvent('dblclick', {bubbles: true, cancelable: true, view: window});";
@@ -93,11 +104,9 @@ public class BaseElement extends By {
         webElement.submit();
     }
 
-    public String sendKeys(String petName){
-
-        webElement.sendKeys();
-
-        return petName;
+    public void sendKeys(String text)
+    {
+        webElement.sendKeys(text);
     }
 
     @Override
