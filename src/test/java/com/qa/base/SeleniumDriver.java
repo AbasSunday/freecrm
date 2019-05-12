@@ -1,5 +1,6 @@
 package com.qa.base;
 
+import com.qa.utill.Utils;
 import com.qa.utill.enums.ElementState;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,7 +39,24 @@ public class SeleniumDriver implements WebDriver
         System.setProperty("webdriver.chrome.driver", chromePath);
         driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
+
+        boolean forceSize = getBooleanFromConfig("BROWSER_FORCE_WINDOW_SIZE");
+
+        if (forceSize)
+        {
+            int width = getIntFromConfig("BROWSER_WINDOW_WIDTH");
+            int height = getIntFromConfig("BROWSER_WINDOW_HEIGHT");
+            driver.manage().window().setSize(new Dimension(width, height));
+        }
+
+        LoggerHelper.getLogger(SeleniumDriver.class).info("test");
+
+        Utils.print("Browser size: " + driver.manage().window().getSize() + "[" + (forceSize ? "forced" : "not forced") + "]");
+
+        if (getBooleanFromConfig("RUN_BROWSER_MAXIMIZED"))
+        {
+            driver.manage().window().maximize();
+        }
         driver.manage().deleteAllCookies();
     }
 
@@ -67,6 +85,14 @@ public class SeleniumDriver implements WebDriver
         }
     }
 
+    public void printTestDetails()
+    {
+        Utils.print("Starting test execution...");
+        Utils.printSeparator();
+        Utils.print("| Time stamp   | " + Utils.getTimeStamp());
+        Utils.print("| Java version | " + Utils.getJavaVersion());
+        Utils.printSeparator();
+    }
 
     /**
      * Draws red border around element, useful for debuging.
@@ -95,6 +121,16 @@ public class SeleniumDriver implements WebDriver
         {
             e.printStackTrace();
         }
+    }
+
+    public void openMainPage()
+    {
+        driver.get(properties.getProperty("MAIN_PAGE_URL"));
+    }
+
+    public void openQuotePage(String subPage)
+    {
+        driver.get(properties.getProperty("QUOTE_PAGE_URL") + "/" + subPage);
     }
 
     // ==================================================
@@ -139,9 +175,19 @@ public class SeleniumDriver implements WebDriver
         return null;
     }
 
-    public WebDriverWait driverWait(int timeOut){
+    private WebDriverWait driverWait(int timeOut){
 
         return new WebDriverWait(driver,timeOut);
+    }
+
+    public Boolean getBooleanFromConfig(String propertyKey)
+    {
+        return Boolean.parseBoolean(properties.getProperty(propertyKey));
+    }
+
+    public int getIntFromConfig(String propertyKey)
+    {
+        return Integer.parseInt(properties.getProperty(propertyKey));
     }
 
     // ==================================================
@@ -157,9 +203,17 @@ public class SeleniumDriver implements WebDriver
         return instance;
     }
 
-    public SeleniumDriver()
+    protected SeleniumDriver()
     {
         initialize();
+    }
+
+    public void onTestExecutionFinished()
+    {
+        if (getBooleanFromConfig("CLOSE_SELENIUM_ON_EXECUTION_FINISHED"))
+        {
+            driver.close();
+        }
     }
 
     // ==================================================

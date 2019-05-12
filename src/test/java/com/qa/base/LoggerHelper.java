@@ -9,29 +9,22 @@ import java.io.File;
 public class LoggerHelper {
 
 
-    private static Logger logger = LogManager.getLogger(LoggerHelper.class);
-    private static boolean root = false;
+    private static Logger logger;
 
 
 
     public static Logger getLogger(Class cls) {
 
-        if (root) {
+        if (logger == null) {
 
             LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
-            File file = new File( ("user.dir") + "/resources/log4j.properties");
+            File file = new File( System.getProperty("user.dir") + "/resources/log4j.properties");
 
             context.setConfigLocation(file.toURI());
-            root = true;
-            return LoggerHelper.getLogger(cls);
+
+            return logger.info("");
         }
-        return LoggerHelper.getLogger(cls);
+        return logger;
     }
 
-//    public static void main(String[] args) {
-//        Logger log = LoggerHelper.getLogger(Logger.class);
-//        log.info("Logger is configured");
-//        log.info("Logger is configured");
-//        log.info("Logger is configured");
-//    }
 }

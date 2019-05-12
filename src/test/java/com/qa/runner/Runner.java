@@ -1,9 +1,12 @@
 package com.qa.runner;
 
+import com.qa.base.SeleniumDriver;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -17,4 +20,15 @@ import org.junit.runner.RunWith;
 
 public class Runner extends AbstractTestNGCucumberTests
 {
+    @BeforeClass
+    public static void setUp()
+    {
+        SeleniumDriver.getInstance().printTestDetails();
+    }
+
+    @AfterClass
+    public static void TearDown()
+    {
+        SeleniumDriver.getInstance().onTestExecutionFinished();
+    }
 }
