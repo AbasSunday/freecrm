@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="logPath">target/log4j</Property>
+        <Property name="mainLogFileName">automation-testing</Property>
+    </Properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n%throwable{short.lineNumber}"/>
+        </Console>
+
+        <RollingFile name="mainLog" fileName="${logPath}/${mainLogFileName}.log"
+                     filePattern="${logPath}/${mainLogFileName}_%d{yyyy-MM-dd}.log">
+            <PatternLayout
+                    pattern="[%highlight{%-5level}] %d{DEFAULT} %c{1}.%M() - %msg%n%throwable{short.lineNumber}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="mainLog"/>
+        </Root>
+    </Loggers>
+</Configuration>

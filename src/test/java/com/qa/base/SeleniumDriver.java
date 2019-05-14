@@ -2,6 +2,8 @@ package com.qa.base;
 
 import com.qa.utill.Utils;
 import com.qa.utill.enums.ElementState;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,12 +28,15 @@ public class SeleniumDriver implements WebDriver
     private WebDriver driver;
     private Properties properties;
 
+    private static final Logger logger = LogManager.getLogger(SeleniumDriver.class);
+
     // ==================================================
     // CLASS LOGIC
     // ==================================================
 
     private void initialize()
     {
+        logger.info("test Log4j");
         reduceChromeDriverLogging();
         loadConfigFile();
 
@@ -48,8 +53,6 @@ public class SeleniumDriver implements WebDriver
             int height = getIntFromConfig("BROWSER_WINDOW_HEIGHT");
             driver.manage().window().setSize(new Dimension(width, height));
         }
-
-        LoggerHelper.getLogger(SeleniumDriver.class).info("test");
 
         Utils.print("Browser size: " + driver.manage().window().getSize() + "[" + (forceSize ? "forced" : "not forced") + "]");
 
