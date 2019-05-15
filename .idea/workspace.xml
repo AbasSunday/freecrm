@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82da3a6f-9c72-498d-8095-8e2c973cf266" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/com/qa/steps/QuoteDetailsSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/elements/PetTypeSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/QuoteDetailsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/steps/CommonSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/steps/QuoteDetailsSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/utill/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/utill/enums/PetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/MainPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/MainPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BaseElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/steps/MainPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/steps/MainPageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/report.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,122 +29,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1060">
-              <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+            <state relative-caret-position="452">
+              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3572#3573#0" expanded="true" />
-                <element signature="e#3639#3640#0" expanded="true" />
-                <element signature="e#3692#3693#0" expanded="true" />
-                <element signature="e#3776#3777#0" expanded="true" />
                 <element signature="e#3965#3966#0" expanded="true" />
-                <element signature="e#3998#3999#0" expanded="true" />
-                <element signature="e#4042#4043#0" expanded="true" />
-                <element signature="e#4071#4072#0" expanded="true" />
-                <element signature="e#5747#5748#0" expanded="true" />
-                <element signature="e#5775#5776#0" expanded="true" />
-                <element signature="e#6152#6153#0" expanded="true" />
-                <element signature="e#6181#6182#0" expanded="true" />
-                <element signature="e#6236#6237#0" expanded="true" />
-                <element signature="e#6281#6282#0" expanded="true" />
-                <element signature="e#6331#6332#0" expanded="true" />
-                <element signature="e#6371#6372#0" expanded="true" />
-                <element signature="e#6436#6437#0" expanded="true" />
-                <element signature="e#6482#6483#0" expanded="true" />
-                <element signature="e#6540#6541#0" expanded="true" />
-                <element signature="e#6585#6586#0" expanded="true" />
-                <element signature="e#6636#6637#0" expanded="true" />
-                <element signature="e#6681#6682#0" expanded="true" />
-                <element signature="e#6835#6836#0" expanded="true" />
-                <element signature="e#6883#6884#0" expanded="true" />
-                <element signature="e#6936#6937#0" expanded="true" />
-                <element signature="e#6983#6984#0" expanded="true" />
-                <element signature="e#7036#7037#0" expanded="true" />
-                <element signature="e#7076#7077#0" expanded="true" />
-                <element signature="e#7126#7127#0" expanded="true" />
-                <element signature="e#7166#7167#0" expanded="true" />
-                <element signature="e#7211#7212#0" expanded="true" />
-                <element signature="e#7249#7250#0" expanded="true" />
+                <element signature="e#4049#4050#0" expanded="true" />
+                <element signature="e#6020#6021#0" expanded="true" />
+                <element signature="e#6048#6049#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/QuoteDetailsPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="72" lean-forward="true" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#328#329#0" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/temp-testng-customsuite.xml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -189,9 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/qa/base/Base.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qa/steps/LoginPageStepDef.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qa/runner/Runner.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java" />
@@ -204,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pages/MainPage.java" />
         <option value="$PROJECT_DIR$/resource/log4j.properties" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
-        <option value="$PROJECT_DIR$/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/base/Base.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/base/BasePage.java" />
@@ -222,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/qa/steps/FrontPate.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/pom/pages/DetailsPage.java" />
         <option value="$PROJECT_DIR$/features/Login.feature" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/features/DetailsPage.feature" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/PropertiesFileReader.java" />
         <option value="$PROJECT_DIR$/features/MainPage2.feature" />
@@ -237,9 +121,14 @@
         <option value="$PROJECT_DIR$/src/test/java/com/qa/steps/QuoteDetailsSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java" />
         <option value="$PROJECT_DIR$/config.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/utill/Utils.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java" />
+        <option value="$PROJECT_DIR$/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java" />
       </list>
     </option>
   </component>
@@ -266,7 +155,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -279,17 +168,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
@@ -358,7 +243,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qa" type="462c0819:PsiDirectoryNode" />
               <item name="pom" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
@@ -367,7 +252,8 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qa" type="462c0819:PsiDirectoryNode" />
-              <item name="runner" type="462c0819:PsiDirectoryNode" />
+              <item name="pom" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
@@ -381,19 +267,29 @@
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="freecrm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="utill" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freecrm" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freecrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="freecrm" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="cucumber-reports" type="462c0819:PsiDirectoryNode" />
+              <item name="log4j" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="CatdeaLogs" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -412,15 +308,15 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.qa.utill" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/java/com/qa/steps" />
       <recent name="$PROJECT_DIR$/resources" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/qa/steps" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -651,38 +547,45 @@
       <option name="project" value="LOCAL" />
       <updated>1557615443290</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Detail Page feature added">
+      <created>1557693832499</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557693832499</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Runner - 2019.05.12 at 14h 23m 22s.xml">
+    <history-entry file="Runner - 2019.05.14 at 06h 47m 35s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 31m 02s.xml">
+    <history-entry file="Runner - 2019.05.14 at 06h 48m 24s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 31m 22s.xml">
+    <history-entry file="Runner - 2019.05.14 at 06h 49m 30s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 43m 15s.xml">
+    <history-entry file="Runner - 2019.05.14 at 07h 27m 10s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 44m 02s.xml">
+    <history-entry file="Runner - 2019.05.14 at 07h 29m 13s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 45m 15s.xml">
+    <history-entry file="Runner - 2019.05.14 at 07h 39m 35s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 45m 58s.xml">
+    <history-entry file="Runner - 2019.05.14 at 07h 41m 55s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 46m 40s.xml">
+    <history-entry file="Runner - 2019.05.14 at 07h 44m 09s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 46m 54s.xml">
+    <history-entry file="Runner - 2019.05.14 at 08h 02m 58s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Runner - 2019.05.12 at 14h 47m 38s.xml">
+    <history-entry file="Runner - 2019.05.14 at 08h 10m 14s.xml">
       <configuration name="Runner" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -702,7 +605,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49816176" visible="true" weight="0.24725275" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49816176" visible="true" weight="0.25030527" />
       <window_info id="Structure" order="1" sideWeight="0.5018382" side_tool="true" weight="0.24420024" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -711,8 +614,8 @@
       <window_info id="Favorites" order="6" sideWeight="0.5007587" side_tool="true" weight="0.16605617" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4981685" visible="true" weight="0.18775511" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.59183675" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4981685" weight="0.42142856" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.5653061" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.327551" />
@@ -726,7 +629,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32854986" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.16422467" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -734,6 +637,39 @@
       <window_info anchor="right" id="CDI" order="9" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32905984" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49816176" visible="true" weight="0.25030527" />
+      <window_info id="Structure" order="1" sideWeight="0.5018382" side_tool="true" weight="0.24420024" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5007587" side_tool="true" weight="0.16605617" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4981685" weight="0.42142856" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" visible="true" weight="0.5653061" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.327551" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.497558" weight="0.46632653" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50183153" side_tool="true" weight="0.36632654" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.327551" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49924472" weight="0.21836735" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.16422467" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="CDI" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32905984" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -771,6 +707,24 @@
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java</url>
+          <line>203</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java</url>
+          <line>210</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -780,52 +734,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar!/org/openqa/selenium/WebElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="5" selection-start-line="14" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/LocatorType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/enums/ElementState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-core/3.0.2/cucumber-core-3.0.2.jar!/cucumber/runtime/Timeout.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-java/3.0.2/cucumber-java-3.0.2.jar!/cucumber/runtime/java/JavaStepDefinition.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-core/3.0.2/cucumber-core-3.0.2.jar!/cucumber/runtime/Utils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#945#2023#0" expanded="true" />
-            <element signature="e#2022#2023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -909,34 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/Invoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="988" selection-start-line="988" selection-end-line="988" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/TestMethodWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="508" selection-start-line="508" selection-end-line="508" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/SuiteRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="366" selection-start-line="366" selection-end-line="366" />
         </state>
       </provider>
     </entry>
@@ -1098,82 +978,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="1755">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/temp-testng-customsuite.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1060">
-          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+        <state relative-caret-position="645">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3572#3573#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3692#3693#0" expanded="true" />
-            <element signature="e#3776#3777#0" expanded="true" />
-            <element signature="e#3965#3966#0" expanded="true" />
-            <element signature="e#3998#3999#0" expanded="true" />
-            <element signature="e#4042#4043#0" expanded="true" />
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#5747#5748#0" expanded="true" />
-            <element signature="e#5775#5776#0" expanded="true" />
-            <element signature="e#6152#6153#0" expanded="true" />
-            <element signature="e#6181#6182#0" expanded="true" />
-            <element signature="e#6236#6237#0" expanded="true" />
-            <element signature="e#6281#6282#0" expanded="true" />
-            <element signature="e#6331#6332#0" expanded="true" />
-            <element signature="e#6371#6372#0" expanded="true" />
-            <element signature="e#6436#6437#0" expanded="true" />
-            <element signature="e#6482#6483#0" expanded="true" />
-            <element signature="e#6540#6541#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
-            <element signature="e#6636#6637#0" expanded="true" />
-            <element signature="e#6681#6682#0" expanded="true" />
-            <element signature="e#6835#6836#0" expanded="true" />
-            <element signature="e#6883#6884#0" expanded="true" />
-            <element signature="e#6936#6937#0" expanded="true" />
-            <element signature="e#6983#6984#0" expanded="true" />
-            <element signature="e#7036#7037#0" expanded="true" />
-            <element signature="e#7076#7077#0" expanded="true" />
-            <element signature="e#7126#7127#0" expanded="true" />
-            <element signature="e#7166#7167#0" expanded="true" />
-            <element signature="e#7211#7212#0" expanded="true" />
-            <element signature="e#7249#7250#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="90">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1183,20 +1007,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/utill/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/temp-testng-customsuite.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/pom/pages/QuoteDetailsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="72" lean-forward="true" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="83" />
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#463#464#0" expanded="true" />
@@ -1207,10 +1024,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar!/org/apache/logging/log4j/core/LoggerContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="363" column="16" selection-start-line="363" selection-start-column="16" selection-end-line="363" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="510" selection-start-line="510" selection-end-line="510" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/SuiteRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="458" selection-start-line="458" selection-end-line="458" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/runner/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/TestResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#3100#3101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/Invoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/TestMethodWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/log4j/automation-testing_2019-05-14.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/log4j/automation-testing.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/propertieslogs.log">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/LoggerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qa/base/SeleniumDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3965#3966#0" expanded="true" />
+            <element signature="e#4049#4050#0" expanded="true" />
+            <element signature="e#6020#6021#0" expanded="true" />
+            <element signature="e#6048#6049#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
