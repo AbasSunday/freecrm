@@ -1,279 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>maven-plugin</packaging>
+public class ExcelReader {
 
-    <groupId>bnp.cardiffpinnacle.automation.development</groupId>
-    <artifactId>cardiffpinnacle-automation</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
-    <build>
-        <!-- Source directory configuration -->
-        <sourceDirectory>src\test\java</sourceDirectory>
-        <plugins>
-            <!-- Compiler plugin configures the java version to be used for compiling the code -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <goals>
-                    <goal>generate</goal>
-                </goals>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <suiteXmlFiles>
-                        <testFailureIgnore>true</testFailureIgnore>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
+    public static WebDriver driver;
+    String chrome_path = "/Users/abas/Downloads/chromedriver";
+    public static HSSFWorkbook workbook;
+    public static HSSFSheet worksheet;
+    public static DataFormatter formatter = new DataFormatter();
+    public static String file_location = System.getProperty("user.dir") + "/Documents/FreeCRMTest/src/main/java/com/crm/testdata/FreeCrmTestData.xlsx";
+    static String SheetName = "contacts";
+    public String Res;
+    //Write obj1 = new Write();
+    public int DataSet = -1;
 
-                <executions>
-                    <execution>
-                        <id>verify</id>
-                        <configuration>
-                            <projectName>Pet Insurance Login and Register</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-JVM-reports</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <skippedFails>true</skippedFails>
-                            <enableFlashCharts>true</enableFlashCharts>
-                            <buildNumber>1</buildNumber>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.0.0-M1</version>
-            </plugin>
-        </plugins>
-    </build>
+///Users/abas/Downloads/chromedriver
 
-    <!--=============================================================================================================================-->
-    <!--                                                Selenium Dependencies-->
-    <!--=============================================================================================================================-->
-    <dependencies>
+    @BeforeSuite
+    public void setUp(){
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-        </dependency>
+        System.setProperty("webdriver.chrome.driver", chrome_path);
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://uat5.everypaw.com/portal/login/");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
-        <!--=============================================================================================================================-->
-        <!--                                                Cucumber Dependencies-->
-        <!--=============================================================================================================================-->
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>3.0.2</version>
-            <scope>test</scope>
-        </dependency>
+    @DataProvider
+    public static Object[][] readExcelData() throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(file_location); //Excel sheet file location get mentioned here
+        workbook = new HSSFWorkbook(fileInputStream); //get my workbook
+        worksheet = workbook.getSheet(SheetName);// get my sheet from workbook
+        HSSFRow Row = worksheet.getRow(0);     //get my Row which start from 0
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-jvm</artifactId>
-            <version>4.3.0</version>
-            <type>pom</type>
-        </dependency>
+        int RowNum = worksheet.getPhysicalNumberOfRows();// count my number of Rows
+        int ColNum = Row.getLastCellNum(); // get last ColNum
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>4.3.0</version>
-            <scope>compile</scope>
-        </dependency>
+        Object Data[][] = new Object[RowNum - 1][ColNum]; // pass my  count data in array
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>4.3.0</version>
-            <scope>compile</scope>
-        </dependency>
+        for (int i = 0; i < RowNum - 1; i++) //Loop work for Rows
+        {
+            HSSFRow row = worksheet.getRow(i + 1);
+
+            for (int j = 0; j < ColNum; j++) //Loop work for colNum
+            {
+                if (row == null)
+                    Data[i][j] = "";
+                else {
+                    HSSFCell cell = row.getCell(j);
+                    if (cell == null)
+                        Data[i][j] = ""; //if it get Null value it pass no data
+                    else {
+                        String value = formatter.formatCellValue(cell);
+                        Data[i][j] = value; //This formatter get my all values as string i.e integer, float all type data value
+                    }
+                }
+            }
+        }
+
+        return Data;
+    }
+
+    @Test //Test method
+            (dataProvider="readExcelData") //It get values from ReadVariant function method
+
+//Here my all parameters from excel sheet are mentioned.
+        public void AddVariants(String title, String firstname, String lastname, String company) throws Exception
+
+    {
+
+        driver.findElement(By.xpath("//*[@id='registerForm']/div[1]/fieldset/div[1]/label")).click();
+        driver.wait();
+
+        driver.findElement(By.id("emailAddress")).sendKeys(title);
+        System.out.println("NAme of product available are:" +title);
 
 
-        <!--=============================================================================================================================-->
-        <!--                                                Log4j Dependencies-->
-        <!--=============================================================================================================================-->
+        driver.findElement(By.id("postCode")).sendKeys(firstname);
+        System.out.println("Weight for products are:" +firstname);
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.1</version>
-        </dependency>
+        driver.findElement(By.id("daySelectDob")).sendKeys(lastname);
+        System.out.println("Volume of product are:" +lastname);
 
-        <!--=============================================================================================================================-->
-        <!--                                                Extent Report  Dependencies-->
-        <!--=============================================================================================================================-->
-        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>4.0.9</version>
-        </dependency>
+        driver.findElement(By.id("monthSelectDob")).sendKeys(lastname);
+        driver.findElement(By.id("yearSelectDob")).sendKeys(lastname);
 
-        <!--=============================================================================================================================-->
-        <!--                                                TestNg  Dependencies-->
-        <!--=============================================================================================================================-->
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.13.6</version>
-            <scope>compile</scope>
-        </dependency>
+        driver.findElement(By.id("createPassword")).sendKeys(company);
+        System.out.println("Description quotation are:" +company);
 
-        <dependency>
-            <groupId>net.masterthought</groupId>
-            <artifactId>cucumber-reporting</artifactId>
-            <version>4.5.1</version>
-        </dependency>
 
-    </dependencies>
+    }
+    @AfterClass
+    public void tearDown(){
 
-</project>
-BEFORE MODIFICATION
-
-<groupId>bnp.cardiffpinnacle.automation.development</groupId>
-<artifactId>cardiffpinnacle-automation</artifactId>
-<version>1.0-SNAPSHOT</version>
-<properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
-</properties>
-<build>
-    <!-- Source directory configuration -->
-    <sourceDirectory>src\test\java</sourceDirectory>
-    <plugins>
-        <!-- Following plugin executes the testng tests -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M3</version>
-            <configuration>
-                <testFailureIgnore>true</testFailureIgnore>
-
-                <!-- Suite testng xml file to consider for test execution -->
-                <suiteXmlFiles>
-                    <suiteXmlFile>testng.xml</suiteXmlFile>
-                    <suiteXmlFile>testng.xml</suiteXmlFile>
-                </suiteXmlFiles>
-            </configuration>
-        </plugin>
-        <!-- Compiler plugin configures the java version to be used for compiling
-            the code -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
-        <plugin>
-            <groupId>net.masterthought</groupId>
-            <artifactId>cucumber-reporting</artifactId>
-            <version>4.5.1</version>
-            <executions>
-                <execution>
-                    <id>verify</id>
-                    <goals>
-                        <goal>generate</goal>
-                    </goals>
-                    <configuration>
-                        <projectName>Pet Insurance Login and Register</projectName>
-                        <outputDirectory>${project.build.directory}/cucumber-JVM-reports</outputDirectory>
-                        <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                        <skippedFails>true</skippedFails>
-                        <enableFlashCharts>true</enableFlashCharts>
-                        <buildNumber>1</buildNumber>
-                    </configuration>
-
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
-            <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <version>3.0.0-M1</version>
-        </plugin>
-    </plugins>
-</build>    <dependencies>
-
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>3.141.59</version>
-    </dependency>        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-picocontainer</artifactId>
-        <version>3.0.2</version>
-        <scope>test</scope>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-jvm</artifactId>
-        <version>4.3.0</version>
-        <type>pom</type>
-    </dependency>
-
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-testng</artifactId>
-        <version>4.3.0</version>
-        <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-java</artifactId>
-        <version>4.3.0</version>
-        <scope>compile</scope>
-    </dependency><!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-core</artifactId>
-        <version>2.11.1</version>
-    </dependency>        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-    <dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>4.0.9</version>
-    </dependency>
-
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>6.9.13.6</version>
-        <scope>compile</scope>
-    </dependency>
-</dependencies>
+        driver.close();
+    }
+}
