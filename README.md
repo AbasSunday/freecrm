@@ -1,40 +1,39 @@
-public class LoginPage extends BaseSteps {
 
-    private BaseElement loginEmail = new BaseElement(LocatorType.ID, "loginEmail", 10);
-    private BaseElement loginPassword = new BaseElement(LocatorType.ID, "loginPassword", 10);
-    private BaseElement showForgottenPasswordModal = new BaseElement(LocatorType.ID, "showForgottenPasswordModal",10);
-    private BaseElement rememberUsername = new BaseElement(LocatorType.ID, "rememberUsername", 10);
-    private BaseElement loginSubmitButton = new BaseElement( LocatorType.ID,"loginSubmit",15);
-    private BaseElement loginTab = new BaseElement(LocatorType.ID, "login-tab", 10);
 
-//    public LoginPage(){
-//
-//        PageFactory.initElements(driver, this);
-//    }
+import pom.baseObjectPage.BaseElement;
 
-    public BaseElement getLoginEmail() {
-        return loginEmail.get();
+import utility.enumBase.LocatorType;
 
+
+
+public class PolicyPage {
+
+    private BaseElement petPolicyNumberRadioButton = new BaseElement(LocatorType.XPATH, "//*[@id='registerForm']/div[1]/fieldset/div[2]/label", 10);
+    private BaseElement petPolicyNumber = new BaseElement(LocatorType.ID, "policyNumber", 10);
+
+    private BaseElement enterPolicyEmail = new BaseElement(LocatorType.ID, "registrationEmail", 10);
+    private BaseElement nextButton = new BaseElement(LocatorType.ID, "registerSubmit", 10);
+
+    private BaseElement submitEmailButton = new BaseElement(LocatorType.ID, "submitEmail", 10);
+
+
+    public BaseElement getPetPolicyNumberRadioButton() {
+        return petPolicyNumberRadioButton.get();
     }
 
-    public BaseElement getLoginPassword() {
-        return loginPassword.get();
+    public BaseElement getPetPolicyNumber() {
+        return petPolicyNumber.get();
     }
 
-    public BaseElement getShowForgottenPasswordModal() {
-        return showForgottenPasswordModal.get();
+    public BaseElement getEnterPolicyEmail() {
+        return enterPolicyEmail.get();
+    }
+    public BaseElement getNextButton(){
+
+       return nextButton.get();
     }
 
-    public BaseElement getRememberUsername() {
-        return rememberUsername.get();
-    }
-
-    public BaseElement getLoginSubmitButton(){
-
-        return loginSubmitButton.get();
-    }
-    public BaseElement getLoginTab(){
-
-        return loginTab.get();
+    public BaseElement getSubmitEmailButton() {
+        return submitEmailButton.get();
     }
 }
