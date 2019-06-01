@@ -1,41 +1,47 @@
+package pom.baseObjectPage;
 
-public class LoginPage extends BaseSteps {
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import utility.enumBase.ElementState;
+import utility.enumBase.LocatorType;
 
-    private BaseElement loginEmail = new BaseElement(LocatorType.ID, "loginEmail", 10);
-    private BaseElement loginPassword = new BaseElement(LocatorType.ID, "loginPassword", 10);
-    private BaseElement showForgottenPasswordModal = new BaseElement(LocatorType.ID, "showForgottenPasswordModal",10);
-    private BaseElement rememberUsername = new BaseElement(LocatorType.ID, "rememberUsername", 10);
-    private BaseElement loginSubmitButton = new BaseElement( LocatorType.ID,"loginSubmit",15);
-    private BaseElement loginTab = new BaseElement(LocatorType.ID, "login-tab", 10);
+public class PasswordStrengthIndicator extends BaseElement {
 
-//    public LoginPage(){
-//
-//        PageFactory.initElements(driver, this);
-//    }
+    private PasswordStrength passwordStrength;
+    private WebElement webElement;
 
-    public BaseElement getLoginEmail() {
-        return loginEmail.get();
+    public enum PasswordStrength {
+        
+        WEAK("ls-level-2"),
+        OK("ls-level-3"),
+        GOOD("ls-level-4"),
+        GREAT("ls-level-5");
+        
+        private final String className;
 
+        PasswordStrength(String className) {
+            this.className = className;
+        }
+
+        public String getClassName() {
+            return className;
+        }
     }
 
-    public BaseElement getLoginPassword() {
-        return loginPassword.get();
+    public PasswordStrengthIndicator(String id) {
+        super(LocatorType.ID, id, 10);
     }
 
-    public BaseElement getShowForgottenPasswordModal() {
-        return showForgottenPasswordModal.get();
+    public String getStrengthLabelValue() {
+        return webElement.findElement(By.xpath("//span[@class='current-strength']")).getText().trim();
     }
 
-    public BaseElement getRememberUsername() {
-        return rememberUsername.get();
+    public WebElement getPasswordStrengthMeter() {
+        return webElement.findElement(By.id("passwordStrengthMeter"));
     }
 
-    public BaseElement getLoginSubmitButton(){
-
-        return loginSubmitButton.get();
-    }
-    public BaseElement getLoginTab(){
-
-        return loginTab.get();
+    public PasswordStrengthIndicator get() {
+        findElement(ElementState.VISIBLE);
+        return this;
     }
 }
