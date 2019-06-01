@@ -1,265 +1,121 @@
-package base;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utility.Utils;
-import utility.enumBase.ElementState;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.*;
-import java.util.logging.Level;
 
 
-public class SeleniumDriver implements WebDriver {
+    private WebElement webElement;
+    private LocatorType locatorType = LocatorType.ID;
+    private String locator;
+    private int timeOut;
+    protected static SeleniumDriver driver = SeleniumDriver.getInstance();
+    private final int DEFAULT_TIMEOUT = 10; //TODO might be config?
 
-    // ==================================================
-    // VARIABLES
-    // ==================================================
+    public BaseElement(LocatorType locatorType, String locator, int timeOut) {
+        this.locatorType = locatorType;
+        this.locator = locator;
+        this.timeOut = timeOut;
+    }
 
-    private static SeleniumDriver instance;
-    protected static WebDriver driver;
-    private static Properties properties;
-    private static final Logger logger = LogManager.getLogger(SeleniumDriver.class);
+    public BaseElement(String id)
+    {
+        new BaseElement(LocatorType.ID, id, DEFAULT_TIMEOUT);
+    }
 
-    // TODO: Update the Listener Instance
-    // TODO: Add some browser Instance for parallel testing
+    public String getLocatorInfo() {
 
-    // ==================================================
-    // CLASS LOGIC
-    // ==================================================
+        return "Found By " + locatorType + "[" + locator + "]";
+    }
 
-    private static void initialize() {
-
-        reduceChromeDriverLogging();
-        loadConfigFile();
-
-        /**
-         * This is getting the drivers path
-         */
-        String resourceFolderPath = System.getProperty("user.dir") + "\\resources\\testData\\";
-        String chromePath = resourceFolderPath + "chromedriver.exe";
-        String pathEdge = resourceFolderPath + "msedgedriver.exe";
-        String pathFirefox = resourceFolderPath + "geckodriver.exe";
-        String pathIe = resourceFolderPath + "IEDriverServer.exe";
-
-        /**
-         * This is setting the Chrome path
-         */
-        System.setProperty("webdriver.chrome.driver", chromePath);
-        logger.info("Resource File  = "+ chromePath);
-        driver = new ChromeDriver();
-
-        /**
-         * This is setting and getting the window size
-         */
-        boolean forceSize = getBooleanFromConfig("BROWSER_FORCE_WINDOW_SIZE");
-
-        if (forceSize) {
-            int width = getIntFromConfig("BROWSER_WINDOW_WIDTH");
-            int height = getIntFromConfig("BROWSER_WINDOW_HEIGHT");
-            driver.manage().window().setSize(new Dimension(width, height));
+    public void findElement(ElementState elementState) {
+        switch (locatorType) {
+            case ID:
+                webElement = driver.getElement(By.id(locator), elementState, timeOut);
+                break;
+            case XPATH:
+                webElement = driver.getElement(By.xpath(locator), elementState, timeOut);
+                break;
+            case FORM_CONTROL_NAME:
+                webElement = driver.getElement(By.xpath("//*[@formcontrolname=" + locator + "]"), elementState, timeOut);
+                break;
+            case DATA_VALIDATION:
+                webElement = driver.getElement(By.xpath("//*[@data-validation=" + locator + "]"), elementState, timeOut);
+                break;
         }
-
-        Utils.print("Browser size: " + driver.manage().window().getSize() + "[" + (forceSize ? "forced" : "not forced") + "]");
-
-        if (getBooleanFromConfig("RUN_BROWSER_MAXIMIZED")) {
-            driver.manage().window().maximize();
-        }
-        driver.manage().deleteAllCookies();
     }
     /**
-     * Reduces number of ChromeDriver log output to the console,
-     * makes console cleaner and easier to see important output.
-     * Use with caution, it might disable important logs in case of crash etc.
-     */
-    private static void reduceChromeDriverLogging() {
-        System.setProperty("webdriver.chrome.silentOutput", "true");
-        java.util.logging.Logger.getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
-    }
-
-    private static void loadConfigFile() {
-        try {
-            properties = new Properties();
-            FileInputStream fis = new FileInputStream("config.properties");
-            properties.load(fis);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void printTestDetails() {
-        Utils.print("Starting test execution...");
-        Utils.printSeparator();
-        Utils.print("| Time stamp   | " + Utils.getTimeStamp());
-        Utils.print("| Java version | " + Utils.getJavaVersion());
-        Utils.printSeparator();
-    }
-    /**
-     * Draws red border around element, useful for debuging.
      *
-     * @param element that will have border around it
+     *
      */
-    public void drawBorder(WebElement element) {
-        try {
-            JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("arguments[0].style.border='3px solid red'", element);
-        } catch (StaleElementReferenceException ignored) {
 
-        }
-    }
-
-    public void sleep(long milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void openMainPage() {
-        driver.get(properties.getProperty("AUTH_ACCESS_LINK"));
-        driver.navigate().to(properties.getProperty("REGISTER_LOGIN"));
-    }
-
-    public void openQuotePage(String subPage) {
-        driver.get(properties.getProperty("VERIFY_EMAIL_LINK") + "/" + subPage);
-    }
-    // ==================================================
-    // GETTERS AND SETTERS
-    // ==================================================
-
-    public Properties getProperties() {
-        return properties;
-    }
-
-    public WebDriver getWebDriver() {
-        return driver;
+    public BaseElement get(ElementState elementState) {
+        findElement(elementState);
+        return this;
     }
 
     /**
-     * This method is used to switch and alert pop-up screen
+     *
+     *
      */
 
-    public void switchToAlert() {
-        Alert alert = driver.switchTo().alert();
-        System.out.println(alert.getText());
-        alert.accept();
+    public BaseElement get() {
+        return get(ElementState.CLICKABLE);
     }
 
     /**
-     * This method is used to locate element on the web page that is in a specified state
-     * and also wait till the expected condition is met
+     *
+     *
      */
 
-    public WebElement getElement(By by, ElementState elementState, int timeOut) {
-        switch (elementState) {
-            case CLICKABLE:
-                return driverWait(timeOut).until(ExpectedConditions.elementToBeClickable(by));
-            case VISIBLE:
-                return driverWait(timeOut).until(ExpectedConditions.visibilityOfElementLocated(by));
-            case PRESENT:
-                return driverWait(timeOut).until(ExpectedConditions.presenceOfElementLocated(by));
-        }
-        return null;
+    public void clickWithJavaScript()
+    {
+        JavascriptExecutor executor = (JavascriptExecutor) driver.getWebDriver();
+        executor.executeScript("arguments[0].click();", webElement);
     }
 
-    private WebDriverWait driverWait(int timeOut) {
+    /**
+     *
+     *
+     */
 
-        return new WebDriverWait(driver, timeOut);
+    public void doubleClickWithJavascript(WebElement element)
+    {
+        String jsCode = "var evObj = new MouseEvent('dblclick', {bubbles: true, cancelable: true, view: window});";
+        jsCode += " arguments[0].dispatchEvent(evObj);";
+        ((JavascriptExecutor)driver).executeScript(jsCode, element);
     }
 
-    public static Boolean getBooleanFromConfig(String propertyKey) {
-        return Boolean.parseBoolean(properties.getProperty(propertyKey));
+    /**
+     *
+     *
+     */
+
+    public WebElement getElementWhenClickable(WebElement element)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static int getIntFromConfig(String propertyKey) {
-        return Integer.parseInt(properties.getProperty(propertyKey));
+    /**
+     *
+     *
+     */
+    public void selectDropDown(String visibleText){
+        Select select = new Select(webElement);
+        select.selectByVisibleText(visibleText);
     }
 
-    // ==================================================
-    // SINGLETON HOLDER
-    // ==================================================
+    public void click(){
 
-    public static SeleniumDriver getInstance() {
-        if (instance == null) {
-            instance = new SeleniumDriver();
-
-        }
-        return instance;
+        webElement.click();
     }
+    public String  getText(){
 
-    protected SeleniumDriver() {
-        initialize();
-    }
-
-    public void onTestExecutionFinished() {
-        if (getBooleanFromConfig("CLOSE_SELENIUM_ON_EXECUTION_FINISHED")) {
-            driver.close();
-        }
-    }
-
-    // ==================================================
-    // INTERFACE IMPLEMENTATION
-    // ==================================================
-
-    public void get(String url) {
-        driver.get(url);
+        return webElement.getText();
 
     }
 
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
+    public void submit()
+    {
+        webElement.submit();
     }
-
-    public String getTitle() {
-        return driver.getTitle();
+    public void sendKeys(String e)
+    {
+        webElement.sendKeys(e);
     }
-
-    public List<WebElement> findElements(By by) {
-        return driver.findElements(by);
-    }
-
-    public WebElement findElement(By by) {
-        return driver.findElement(by);
-    }
-
-    public String getPageSource() {
-        return driver.getPageSource();
-    }
-
-    public void close() {
-
-    }
-
-    public void quit() {
-
-    }
-
-    public Set<String> getWindowHandles() {
-        return driver.getWindowHandles();
-    }
-
-    public String getWindowHandle() {
-        return driver.getWindowHandle();
-    }
-
-    public TargetLocator switchTo() {
-        return driver.switchTo();
-    }
-    public Navigation ReNavigate() {
-        return driver.navigate();
-    }
-
-    public Navigation navigate() {
-        return driver.navigate();
-    }
-
-    public Options manage() {
-        return driver.manage();
-    }
-}
